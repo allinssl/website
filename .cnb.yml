@@ -29,7 +29,8 @@ $:
     - services:
         - docker
       docker:
-        image: node:lts
+        build: 
+          dockerfile: .ide/Dockerfile
         volumes:
           - /root/.npm:cow
       stages:
