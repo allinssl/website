@@ -1,0 +1,88 @@
+/* vitepress/.vitepress/style.css */
+
+:root {
+  --vp-c-brand-1: #20a53a; /* 主要品牌色 */
+  --vp-c-brand-2: #1b8c32; /* 主要品牌色 - 深一点 */
+  --vp-c-brand-3: #25be42; /* 主要品牌色 - 浅一点 */
+
+  --vp-c-brand-soft: rgba(32, 165, 58, 0.14); /* 品牌色的柔和版本，用于背景等 */
+}
+
+/* 控制首页 Hero 图片的大小 */
+.VPHome .image-container .image-src {
+  max-width: 700px; /* 设置最大宽度，可以根据需要调整 */
+  max-height: 350px; 
+  margin: 0 auto;
+} 
+
+/* 控制首页 Hero 左侧文字的大小 */
+.VPHome .main .name,
+.VPHome .main .text {
+  /* 默认标题/文本大小可能比较大，可以取消注释下面的行来减小它 */
+  font-size: 2.5rem; 
+  line-height: 1.5;
+  max-width: 700px;
+}
+
+.VPHome .main .tagline {
+  font-size: 1rem; /* 设置标语字体大小，可以根据需要调整 */
+  line-height: 1.5;
+  max-width: 400px;
+}
+
+/* 如果想单独控制标题的大小 */
+.VPHome .main .name {
+  font-size: 7rem; 
+}
+
+/* 如果想单独控制主要文本的大小 */
+/*
+.VPHome .main .text {
+  font-size: 2.2rem; 
+}
+*/ 
+
+/* 如果想单独控制标题下面描述文字的大小 */
+.VPHome .main .tagline {
+  font-size: 1em; 
+  max-width: 800px;
+}
+
+/* 为 Hero 图片添加背景渐变阴影效果 */
+.VPHome .image-bg {
+  /* 修改为 #20a53a 的径向渐变 */
+  background: radial-gradient(ellipse at center, #20a53a 0%, rgba(32, 165, 58, 0) 70%);
+  /* 你可以调整颜色 (rgba 值) 和渐变范围 (百分比) 来改变效果 */
+  filter: blur(300px); /* 可选：添加模糊效果使阴影更柔和 */
+  opacity: 0.8; /* 可选：调整透明度 */
+}
+
+/* 移动端响应式调整 */
+@media (max-width: 768px) {
+  /* 隐藏 Hero 图片 */
+  .VPHome .container .image {
+    display: none;
+  }
+
+  /* 调整 Hero 图片在移动端的尺寸 */
+  .VPHome .image-container .image-src {
+    max-width: 90%; /* 在移动端稍微减小宽度 */
+    max-height: none; /* 移除最大高度限制，让其按比例缩放 */
+    margin-top: 2rem; /* 在图片上方添加一些间距 */
+  }
+
+  /* 调整 Hero 文字在移动端的尺寸 */
+  .VPHome .main .name{
+    font-size: 4rem; /* 减小标题/文本字体大小 */
+    max-width: 100%; /* 允许文字占满宽度 */
+  }
+  .VPHome .main .text {
+    font-size: 1.5rem; /* 减小标题/文本字体大小 */
+    max-width: 100%; /* 允许文字占满宽度 */
+  }
+
+  .VPHome .main .tagline {
+    font-size: 0.9rem; /* 减小标语字体大小 */
+    max-width: 100%; /* 允许文字占满宽度 */
+  }
+} 

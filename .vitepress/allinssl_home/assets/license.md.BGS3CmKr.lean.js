@@ -1,0 +1,1 @@
+import{_ as t,c as n,o as r,ae as a}from"./chunks/framework.Dh1jimFm.js";const f=JSON.parse('{"title":"许可证 (License)","description":"","frontmatter":{},"headers":[],"relativePath":"license.md","filePath":"license.md"}'),s={name:"license.md"};function l(i,e,o,c,p,_){return r(),n("div",null,e[0]||(e[0]=[a("",7)]))}const h=t(s,[["render",l]]);export{f as __pageData,h as default};

@@ -1,0 +1,38 @@
+main:
+  push:
+    - docker:
+        image: node:lts
+        volumes:
+          - /root/.npm:cow
+      stages:
+        - name: Install dependencies
+          script: |
+            npm i
+        - name: build 
+          script: |
+            npm run docs:build
+            cd .vitepress/dist
+        - name: commit
+          image: tencentcom/git-commit:latest
+          commands: |
+            cd .vitepress/dist
+            rm -rf .git
+            git init
+            git config --global user.name "CI Bot"
+            git config --global user.email "ci-bot@aingdesk.com"
+            git remote add origin https://$CNB_TOKEN_USERNAME:$CNB_TOKEN@cnb.cool/allinssl/website.git
+            git add -A
+            git commit -m "chore: 自动部署构建 [skip ci]"
+            git push -f origin HEAD:build
+$:
+  vscode:
+    - services:
+        - docker
+      docker:
+        image: node:lts
+        volumes:
+          - /root/.npm:cow
+      stages:
+        - name: Install dependencies
+          script: |
+            npm i
