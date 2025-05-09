@@ -4,7 +4,7 @@
 
 ## 系统要求
 
-*   操作系统：Linux (推荐 CentOS 7+, Ubuntu 18.04+, Debian 9+) / Windows / macOS
+*   操作系统：Linux (推荐 CentOS 7+, Ubuntu 18.04+, Debian 9+) 
 *   硬件：至少 1 核 CPU, 512MB RAM, 1GB 可用磁盘空间
 *   网络：需要连接互联网以下载依赖和申请证书
 
