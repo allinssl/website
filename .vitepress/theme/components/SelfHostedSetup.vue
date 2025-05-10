@@ -122,8 +122,6 @@ const copyIconSvgStyle = computed(() => ({
 .method-card {
   padding: 1.5rem;
   background-color: white;
-  border-radius: 0.5rem;
-  border: 1px solid #e2e8f0;
 }
 
 /* Modern scrollbar for <pre> elements - default to subtle/hidden */
