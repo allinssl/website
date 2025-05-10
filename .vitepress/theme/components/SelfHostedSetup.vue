@@ -7,36 +7,36 @@
       </div>
 
       <div class="text-content-column">
-        <div style="padding: 1.5rem;background-color: white;">
+        <div class="method-card">
           <div style="display: flex; align-items: center; margin-bottom: 0.75rem;">
             <h3 style="font-size: 1.125rem; font-weight: 600; margin-top: 0;">方法 1: 使用脚本一键安装</h3>
           </div>
           <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
-            <pre style="background-color: #f7fafc; padding: 0.75rem; border-radius: 0.25rem; overflow-x: auto; flex-grow: 1;"><code>{{ command1Text }}</code></pre>
+            <pre><code>{{ command1Text }}</code></pre>
             <button @click="triggerCopy(command1Text, 'cmd1')" :style="copyIconButtonBaseStyle" title="复制命令" class="copy-button">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" :style="copyIconSvgStyle"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
             </button>
           </div>
           <div v-if="isSuccess && lastCopiedId === 'cmd1'" style="color: #28a745; font-size: 0.9em; margin-top: -0.25rem; margin-bottom: 0.5rem;">复制成功!</div>
-          <p style="font-size: 0.9rem; color: #718096; margin-top: 0.75rem;">请复制上方脚本到您的服务器终端执行</p>
+          <p style="font-size: 0.8rem; color: #718096; margin-top: 0.75rem;">请复制上方脚本到您的服务器终端执行</p>
         </div>
 
-        <div style="padding: 1.5rem;background-color: white;">
+        <div class="method-card">
           <div style="display: flex; align-items: center; margin-bottom: 0.75rem;">
             <h3 style="font-size: 1.125rem; font-weight: 600; margin-top: 0;">方法 2: 使用Docker安装</h3>
           </div>
-          <p style="font-size: 0.9rem; color: #718096; margin-bottom: 0.75rem;">首先，您需要在您的服务器上安装 Docker。</p>
+          <p style="font-size: 0.9rem; color: #4a5568; margin-bottom: 0.75rem;">首先，您需要在您的服务器上安装 Docker。</p>
           <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
-            <pre style="background-color: #f7fafc; padding: 0.75rem; border-radius: 0.25rem; overflow-x: auto; flex-grow: 1;"><code>{{ command2aText }}</code></pre>
+            <pre><code>{{ command2aText }}</code></pre>
             <button @click="triggerCopy(command2aText, 'cmd2a')" :style="copyIconButtonBaseStyle" title="复制命令" class="copy-button">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" :style="copyIconSvgStyle"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
             </button>
           </div>
           <div v-if="isSuccess && lastCopiedId === 'cmd2a'" style="color: #28a745; font-size: 0.9em; margin-top: -0.25rem; margin-bottom: 0.5rem;">复制成功!</div>
           
-          <p style="font-size: 0.9rem; color: #718096; margin-top: 1.5rem; margin-bottom: 0.75rem;">然后复制下面命令到您的服务器终端执行</p>
+          <p style="font-size: 0.9rem; color: #4a5568; margin-top: 1.5rem; margin-bottom: 0.75rem;">然后复制下面命令到您的服务器终端执行</p>
           <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
-            <pre style="background-color: #f7fafc; padding: 0.75rem; border-radius: 0.25rem; overflow-x: auto; flex-grow: 1;"><code>{{ command2bText }}</code></pre>
+            <pre><code>{{ command2bText }}</code></pre>
             <button @click="triggerCopy(command2bText, 'cmd2b')" :style="copyIconButtonBaseStyle" title="复制命令" class="copy-button">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" :style="copyIconSvgStyle"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
             </button>
@@ -119,10 +119,23 @@ const copyIconSvgStyle = computed(() => ({
   gap: 1.5rem; /* Default gap between method blocks */
 }
 
+.method-card {
+  padding: 1.5rem;
+  background-color: white;
+  border-radius: 0.5rem;
+  border: 1px solid #e2e8f0;
+}
+
 /* Modern scrollbar for <pre> elements - default to subtle/hidden */
 pre {
-  scrollbar-width: thin; /* For Firefox - can be 'auto', 'thin', or 'none' */
-  scrollbar-color: transparent transparent; /* For Firefox - thumb and track color */
+  background-color: #f7fafc;
+  padding: 0.75rem;
+  border-radius: 0.25rem;
+  overflow-x: auto;
+  flex-grow: 1;
+  /* Existing scrollbar styles */
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
   /* Transition for scrollbar visibility (works for some properties in some browsers) */
   transition: scrollbar-color 0.3s ease-out;
 }
@@ -188,9 +201,8 @@ pre:hover::-webkit-scrollbar-thumb:hover {
     /* Other mobile-specific font/padding adjustments below */
   }
 
-  /* Adjust padding within method blocks for mobile if needed */
-  .text-content-column > div[style*="padding: 1.5rem"] {
-    padding: 1rem !important; 
+  .method-card {
+    padding: 1rem;
   }
 
   h3 {
@@ -222,9 +234,9 @@ html.dark .self-hosted-setup-section {
   /* background-color: #1e1e1e; */ /* Example dark background for the whole section */
 }
 
-html.dark .text-content-column > div[style*="background-color: white"] {
-  background-color: #25252A !important; /* Darker background for method cards; !important to override inline */
-  border: 1px solid #3a3a3a; /* Optional: add a subtle border for cards in dark mode */
+html.dark .method-card {
+  background-color: #25252A;
+  border-color: #3a3a3a;
 }
 
 /* Text colors in dark mode */
@@ -233,8 +245,8 @@ html.dark h3 {
 }
 
 html.dark p,
-html.dark .text-content-column > div[style*="background-color: white"] p[style*="color: #4a5568"],
-html.dark .text-content-column > div[style*="background-color: white"] p[style*="color: #718096"] {
+html.dark .method-card p[style*="color: #4a5568"],
+html.dark .method-card p[style*="color: #718096"] {
   color: #adbac7; /* Lighter text for paragraphs and helper texts */
 }
 
@@ -244,7 +256,7 @@ html.dark div[style*="color: #28a745"] { /* "复制成功!" message */
 
 /* Code blocks in dark mode */
 html.dark pre {
-  background-color: #1e1e2e !important; /* Darker background for code blocks */
+  background-color: #1e1e2e; /* No !important needed now */
 }
 html.dark pre code {
    color: #c9d1d9; /* Example: light text for code */
