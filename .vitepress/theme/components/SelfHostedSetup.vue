@@ -18,14 +18,14 @@
             </button>
           </div>
           <div v-if="isSuccess && lastCopiedId === 'cmd1'" style="color: #28a745; font-size: 0.9em; margin-top: -0.25rem; margin-bottom: 0.5rem;">复制成功!</div>
-          <p style="font-size: 0.8rem; color: #718096; margin-top: 0.75rem;">请复制上方脚本到您的服务器终端执行</p>
+          <p style="font-size: 0.9rem; color: #718096; margin-top: 0.75rem;">请复制上方脚本到您的服务器终端执行</p>
         </div>
 
         <div style="padding: 1.5rem;background-color: white;">
           <div style="display: flex; align-items: center; margin-bottom: 0.75rem;">
             <h3 style="font-size: 1.125rem; font-weight: 600; margin-top: 0;">方法 2: 使用Docker安装</h3>
           </div>
-          <p style="font-size: 0.9rem; color: #4a5568; margin-bottom: 0.75rem;">首先，您需要在您的服务器上安装 Docker。</p>
+          <p style="font-size: 0.9rem; color: #718096; margin-bottom: 0.75rem;">首先，您需要在您的服务器上安装 Docker。</p>
           <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
             <pre style="background-color: #f7fafc; padding: 0.75rem; border-radius: 0.25rem; overflow-x: auto; flex-grow: 1;"><code>{{ command2aText }}</code></pre>
             <button @click="triggerCopy(command2aText, 'cmd2a')" :style="copyIconButtonBaseStyle" title="复制命令" class="copy-button">
@@ -34,7 +34,7 @@
           </div>
           <div v-if="isSuccess && lastCopiedId === 'cmd2a'" style="color: #28a745; font-size: 0.9em; margin-top: -0.25rem; margin-bottom: 0.5rem;">复制成功!</div>
           
-          <p style="font-size: 0.9rem; color: #4a5568; margin-top: 1.5rem; margin-bottom: 0.75rem;">然后复制下面命令到您的服务器终端执行</p>
+          <p style="font-size: 0.9rem; color: #718096; margin-top: 1.5rem; margin-bottom: 0.75rem;">然后复制下面命令到您的服务器终端执行</p>
           <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
             <pre style="background-color: #f7fafc; padding: 0.75rem; border-radius: 0.25rem; overflow-x: auto; flex-grow: 1;"><code>{{ command2bText }}</code></pre>
             <button @click="triggerCopy(command2bText, 'cmd2b')" :style="copyIconButtonBaseStyle" title="复制命令" class="copy-button">
@@ -81,15 +81,18 @@ const copyIconButtonBaseStyle = {
 const copyIconSvgStyle = computed(() => ({
   width: '18px', // Icon size
   height: '18px',
-  fill: '#666', // Icon color
+  // fill: '#666', // Color handled by CSS now
   transition: 'fill 0.2s ease',
 }));
 
 </script>
 
 <style scoped>
+.copy-button svg {
+  fill: #666; /* Default icon color for light mode */
+}
 .copy-button svg:hover {
-  fill: #333; /* Darker color on hover */
+  fill: #333; /* Darker color on hover for light mode */
 }
 
 .self-hosted-setup-section {
@@ -212,5 +215,84 @@ pre:hover::-webkit-scrollbar-thumb:hover {
     p, pre {
         font-size: 0.8rem; 
     }
+}
+
+/* Dark Mode Adaptations */
+html.dark .self-hosted-setup-section {
+  /* background-color: #1e1e1e; */ /* Example dark background for the whole section */
+}
+
+html.dark .text-content-column > div[style*="background-color: white"] {
+  background-color: #25252A !important; /* Darker background for method cards; !important to override inline */
+  border: 1px solid #3a3a3a; /* Optional: add a subtle border for cards in dark mode */
+}
+
+/* Text colors in dark mode */
+html.dark h3 {
+  color: #e0e0e0; /* Lighter text for headings */
+}
+
+html.dark p,
+html.dark .text-content-column > div[style*="background-color: white"] p[style*="color: #4a5568"],
+html.dark .text-content-column > div[style*="background-color: white"] p[style*="color: #718096"] {
+  color: #adbac7; /* Lighter text for paragraphs and helper texts */
+}
+
+html.dark div[style*="color: #28a745"] { /* "复制成功!" message */
+  color: #34d399; /* Adjust green for better visibility on dark, or keep as is if contrast is good */
+}
+
+/* Code blocks in dark mode */
+html.dark pre {
+  background-color: #1e1e2e !important; /* Darker background for code blocks */
+}
+html.dark pre code {
+   color: #c9d1d9; /* Example: light text for code */
+}
+
+
+/* Copy icon in dark mode */
+html.dark .copy-button svg {
+  fill: #999; /* Lighter icon color for dark mode */
+}
+html.dark .copy-button svg:hover {
+  fill: #ccc; /* Even lighter on hover in dark mode */
+}
+
+/* Scrollbars in dark mode */
+html.dark pre {
+  scrollbar-color: #555 #333; /* For Firefox - thumb and track color */
+}
+
+html.dark pre:hover {
+  scrollbar-color: #6b6b6b #3a3a3a; /* For Firefox - thumb and track color on hover */
+}
+
+html.dark pre::-webkit-scrollbar-track {
+  background: transparent; /* Keep track transparent or a very dark grey */
+}
+html.dark pre:hover::-webkit-scrollbar-track {
+  background: #2c2c2d; /* Dark track on hover */
+}
+
+html.dark pre::-webkit-scrollbar-thumb {
+  background: transparent; /* Keep thumb transparent or a very dark grey */
+}
+html.dark pre:hover::-webkit-scrollbar-thumb {
+  background: #5a5a5f; /* Dark thumb on hover */
+}
+
+html.dark pre:hover::-webkit-scrollbar-thumb:hover {
+  background: #7a7a7f; /* Slightly lighter dark thumb when directly hovered */
+}
+
+/* Ensure mobile styles also respect dark mode if specific colors were set */
+@media (max-width: 768px) {
+  html.dark h3 {
+    /* color: #e0e0e0; Already covered */
+  }
+  html.dark p, html.dark pre {
+    /* color: #adbac7; Already covered */
+  }
 }
 </style> 
