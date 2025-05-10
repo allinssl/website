@@ -41,3 +41,5 @@ features:
     details: 实时监控证书到期时间、部署状态，支持多种通知渠道（Webhook、邮件等），确保证书问题及时发现和处理。
 ---
 
+<SelfHostedSetup />
+
