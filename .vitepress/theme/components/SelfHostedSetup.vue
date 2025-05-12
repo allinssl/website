@@ -25,7 +25,7 @@
           <div style="display: flex; align-items: center; margin-bottom: 0.75rem;">
             <h3 style="font-size: 1.125rem; font-weight: 600; margin-top: 0;">方法 2: 使用Docker安装</h3>
           </div>
-          <p style="font-size: 0.9rem; color: #4a5568; margin-bottom: 0.75rem;">首先，您需要在您的服务器上安装 Docker。</p>
+          <p style="font-size: 0.9rem; color: #4a5568; margin-bottom: 0.1rem;">首先，您需要在您的服务器上安装 Docker。</p>
           <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
             <pre><code>{{ command2aText }}</code></pre>
             <button @click="triggerCopy(command2aText, 'cmd2a')" :style="copyIconButtonBaseStyle" title="复制命令" class="copy-button">
@@ -34,7 +34,7 @@
           </div>
           <div v-if="isSuccess && lastCopiedId === 'cmd2a'" style="color: #28a745; font-size: 0.9em; margin-top: -0.25rem; margin-bottom: 0.5rem;">复制成功!</div>
           
-          <p style="font-size: 0.9rem; color: #4a5568; margin-top: 1.5rem; margin-bottom: 0.75rem;">然后复制下面命令到您的服务器终端执行</p>
+          <p style="font-size: 0.9rem; color: #4a5568; margin-top: 1.5rem; margin-bottom: 0.1rem;">然后复制下面命令到您的服务器终端执行</p>
           <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
             <pre><code>{{ command2bText }}</code></pre>
             <button @click="triggerCopy(command2bText, 'cmd2b')" :style="copyIconButtonBaseStyle" title="复制命令" class="copy-button">
@@ -42,6 +42,14 @@
             </button>
           </div>
           <div v-if="isSuccess && lastCopiedId === 'cmd2b'" style="color: #28a745; font-size: 0.9em; margin-top: -0.25rem; margin-bottom: 0.5rem;">复制成功!</div>
+        </div>
+
+        <div class="method-card">
+          <div style="display: flex; align-items: center; margin-bottom: 0.75rem;">
+            <h3 style="font-size: 1.125rem; font-weight: 600; margin-top: 0;">方法 3: 通过宝塔面板的Docker一键安装</h3>
+          </div>
+          <p style="font-size: 1.0rem; color: #4a5568; margin-bottom: 0.1rem;">安装好宝塔面板 > 侧边栏【Docker】> Docker应用商店搜【ALLinSSL】一键安装</p>
+
         </div>
       </div>
     </div>
@@ -120,7 +128,6 @@ const copyIconSvgStyle = computed(() => ({
 }
 
 .method-card {
-  padding: 1.5rem;
   background-color: white;
 }
 
@@ -197,10 +204,6 @@ pre:hover::-webkit-scrollbar-thumb:hover {
     /* min-width: 0; is still good practice */
     gap: 1rem; /* Reduced gap between method blocks on mobile */
     /* Other mobile-specific font/padding adjustments below */
-  }
-
-  .method-card {
-    padding: 1rem;
   }
 
   h3 {
