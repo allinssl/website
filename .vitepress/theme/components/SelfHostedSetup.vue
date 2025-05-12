@@ -62,7 +62,7 @@ import { useClipboard } from '../composables/useClipboard.js';
 
 const command1Text = 'curl -sSO http://download.allinssl.com/install_allinssl.sh && bash install_allinssl.sh allinssl';
 const command2aText = 'bash <(wget -qO- https://get.docker.com)';
-const command2bText = 'docker run -d --name allinssl -p 7979:8888 -v /www/allinssl/data:/www/allinssl/data allinssl/allinssl:latest';
+const command2bText = 'docker run --name allinssl -p 7979:8888 -v /www/allinssl/data:/www/allinssl/data -e ALLINSSL_USER=allinssladmin -e ALLINSSL_PWD=allinsslpassword -e ALLINSSL_URL=allinsslss allinssl/allinssl:latest';
 
 const { isSuccess, copyToClipboard } = useClipboard();
 const lastCopiedId = ref(null);
