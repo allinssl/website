@@ -39,17 +39,37 @@ export default defineConfig({
                         { text: '项目介绍', link: '/guide/introduction' },
                         { text: '快速上手', link: '/guide/getting-started' },
                         { text: '目标用户', link: '/guide/who-is-it-for' },
-                        { text: '企业服务', link: '/features/ltd' },
+                        { text: '企业服务', link: '/guide/ltd' },
                     ]
                 },
                 {
                     text: '操作指南',
-                    collapsed: true,
+                    collapsed: false,
                     items: [
-                        { text: '申请证书', link: '/guide/apply-certificate' },
-                        { text: '授权API管理', link: '/guide/api-key-management' },
-                        { text: '监控', link: '/guide/monitoring' },
-
+                        { 
+                            text: '授权API管理', 
+                            link: '/guide/help/provider/index' ,
+                            items: [
+                                { text: 'SSH', link: '/guide/help/provider/ssh' },
+                                { text: '宝塔面板', link: '/guide/help/provider/btpanel' },
+                                { text: '1Panel', link: '/guide/help/provider/1panel' },
+                                { text: '宝塔WAF', link: '/guide/help/provider/btwaf' },
+                                { text: '雷池WAF', link: '/guide/help/provider/safeline' },
+                            ]
+                        },
+                        { text: '工作流-证书申请', link: '/guide/help/certificate/index' },                      
+                        { 
+                            text: '工作流-部署平台', 
+                            link: '/guide/help/deploy/index' ,
+                            items: [
+                                { text: '本地部署', link: '/guide/help/deploy/local' },
+                                { text: 'SSH', link: '/guide/help/deploy/ssh' },
+                                { text: '宝塔面板', link: '/guide/help/deploy/btpanel' },
+                                { text: '1Panel', link: '/guide/help/deploy/1panel' },
+                                { text: '宝塔WAF', link: '/guide/help/deploy/btwaf' },
+                                { text: '雷池WAF', link: '/guide/help/deploy/safeline' },
+                            ]
+                        },
                     ]
                 }
             ],
@@ -64,7 +84,6 @@ export default defineConfig({
                         { text: '授权API管理', link: '/features/api-key-management' },
                         { text: '监控', link: '/features/monitoring' },
                         { text: '设置', link: '/features/settings' },
-                        { text: '企业服务', link: '/features/ltd' },
                     ]
                 }
             ],
