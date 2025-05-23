@@ -34,11 +34,22 @@ export default defineConfig({
             '/guide/': [
                 {
                     text: '入门指南',
+                    collapsed: false,
                     items: [
                         { text: '项目介绍', link: '/guide/introduction' },
                         { text: '快速上手', link: '/guide/getting-started' },
                         { text: '目标用户', link: '/guide/who-is-it-for' },
                         { text: '企业服务', link: '/features/ltd' },
+                    ]
+                },
+                {
+                    text: '操作指南',
+                    collapsed: true,
+                    items: [
+                        { text: '申请证书', link: '/guide/apply-certificate' },
+                        { text: '授权API管理', link: '/guide/api-key-management' },
+                        { text: '监控', link: '/guide/monitoring' },
+
                     ]
                 }
             ],
