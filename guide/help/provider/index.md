@@ -50,10 +50,12 @@
 
 ## Cloudflare
 -   获取请参考Cloudflare官方[用户手册](https://developers.cloudflare.com/fundamentals/api/get-started/keys/)。<br/>
--   登陆后点击账号头像，进入 `我的个人资料`>`API 令牌`>`创建令牌`，选择使用`编辑区域 DNS`模板,根据实际需要配置对应的权限。
+-   登陆后点击账号头像，进入 `我的个人资料`>`API 令牌`，选择查看`Global API Key`。
+  ![alt text](../../../public/images/guide/help/provider/index/image-10.png)
 ![alt text](../../../public/images/guide/help/provider/index/image-6.png)
+
 *   **邮箱:** Cloudflare账户所绑定的邮箱。
-*   **APIKey:** 所生成的APIKey。
+*   **APIKey:** 所获取的APIKey。
 
 ## GoDaddy
 -   获取请参考GoDaddy官方[用户手册](https://developer.godaddy.com/getstarted)。<br/>
