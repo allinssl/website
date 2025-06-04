@@ -3,12 +3,12 @@ import { defineConfig } from 'vitepress'
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
     head: [
-        ['title', {}, 'ALLinSSL - 开源免费的 SSL证书申请/部署/续签自动化管理平台'],
         ['link', { rel: 'icon', href: '/favicon.ico' }]
     ],
 
     lang: 'zh-CN', // 语言
     title: "ALLinSSL", // 网站标题
+    titleTemplate: "ALLinSSL - 开源免费的 SSL证书申请/部署/续签自动化管理平台", // 浏览器标题模板
     description: "开源免费的 SSL 证书自动化申请、部署、管理平台", // 网站描述
 
 
