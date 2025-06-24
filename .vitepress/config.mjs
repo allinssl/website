@@ -70,6 +70,7 @@ export default defineConfig({
                                 { text: '雷池WAF', link: '/guide/help/deploy/safeline' },
                             ]
                         },
+                        { text: '插件开发', link: '/guide/help/plugin/plugin' },
                     ]
                 }
             ],
