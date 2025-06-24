@@ -2,14 +2,15 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-    lang: 'zh-CN', // 语言
-    title: "ALLinSSL", // 网站标题
-    description: "开源免费的 SSL 证书自动化申请、部署、管理平台", // 网站描述
-
-    // 恢复 head 配置来引入自定义 CSS
     head: [
         ['link', { rel: 'icon', href: '/favicon.ico' }]
     ],
+
+    lang: 'zh-CN', // 语言
+    title: "ALLinSSL", // 网站标题
+    titleTemplate: "开源免费的 SSL证书申请/部署/续签自动化管理平台", // 浏览器标题模板
+    description: "开源免费的 SSL 证书自动化申请、部署、管理平台", // 网站描述
+
 
     themeConfig: {
         // https://vitepress.dev/reference/default-theme-config
