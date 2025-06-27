@@ -160,4 +160,7 @@ func yourAction(params map[string]interface{}) (*Response, error) {
 
 参考 aliyun 插件和 doge 插件的实现作为开发模板。
 
+## 9. 插件使用
+将插件单独编译成对应系统的可执行文件，放到allinssl运行目录下的plugins/目录下，系统会自动识别符合规范插件
+
 以上就是 ALLinSSL 插件开发的基本流程和规范，遵循这些规则可以确保插件与主系统正常交互。
