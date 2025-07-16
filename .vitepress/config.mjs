@@ -3,7 +3,8 @@ import { defineConfig } from 'vitepress'
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
     head: [
-        ['link', { rel: 'icon', href: '/favicon.ico' }]
+        ['link', { rel: 'icon', href: '/favicon.ico' }],
+        ['script', { defer: true, src: 'https://0198125f-4301-7d86-809f-a69d622434ef.spst1.com/ss.js' }]
     ],
 
     lang: 'zh-CN', // 语言
