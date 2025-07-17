@@ -4,7 +4,14 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
     head: [
         ['link', { rel: 'icon', href: '/favicon.ico' }],
-        ['script', { defer: true, src: 'https://0198125f-4301-7d86-809f-a69d622434ef.spst1.com/ss.js' }]
+        ['script', { defer: true, src: 'https://0198125f-4301-7d86-809f-a69d622434ef.spst1.com/ss.js' }],
+        ['script', { async: true, src: 'https://www.googletagmanager.com/gtag/js?id=G-M50SXZ3G3X' }],
+        ['script', {}, `
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-M50SXZ3G3X');
+        `]
     ],
 
     lang: 'zh-CN', // 语言
