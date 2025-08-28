@@ -43,3 +43,5 @@ features:
 
 <SelfHostedSetup />
 
+<DomainRegister />
+
