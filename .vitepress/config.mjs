@@ -17,6 +17,7 @@ export default defineConfig({
 
         nav: [ // 顶部导航栏
             { text: '首页', link: '/' },
+            { text: '域名注册', link: 'https://www.bt.cn/new/domain-register.html' },
             { text: '指南', link: '/guide/introduction' },
             { text: '功能', link: '/features/dashboard' },
             { text: '社区', link: '/community/contributing' },
@@ -99,4 +100,4 @@ export default defineConfig({
     markdown: {
         lineNumbers: true // 显示代码行号
     }
-}) 
+})
