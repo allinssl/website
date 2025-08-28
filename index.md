@@ -14,6 +14,9 @@ hero:
       text: 快速上手
       link: /guide/getting-started
     - theme: alt
+      text: 注册域名
+      link: https://www.bt.cn/new/domain-register.html
+    - theme: alt
       text: 查看 GitHub
       link: https://github.com/allinssl/allinssl
     - theme: alt
