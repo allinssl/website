@@ -1,7 +1,7 @@
 <template>
   <div class="domain-register-section">
     <div class="container">
-      <p class="section-description">.com低至54元，.cn低至20元！部分后缀新人0.99元注册</p>
+      <p class="section-description">.com低至54元，.cn低至20元！部分后缀新人0.99元</p>
       
       <div class="search-container">
         <div class="input-group">
