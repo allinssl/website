@@ -2,14 +2,23 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
+    head: [
+        ['link', { rel: 'icon', href: '/favicon.ico' }],
+        ['script', { defer: true, src: 'https://0198125f-4301-7d86-809f-a69d622434ef.spst1.com/ss.js' }],
+        ['script', { async: true, src: 'https://www.googletagmanager.com/gtag/js?id=G-M50SXZ3G3X' }],
+        ['script', {}, `
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-M50SXZ3G3X');
+        `]
+    ],
+
     lang: 'zh-CN', // 语言
     title: "ALLinSSL", // 网站标题
+    titleTemplate: "开源免费的 SSL证书申请/部署/续签自动化管理平台", // 浏览器标题模板
     description: "开源免费的 SSL 证书自动化申请、部署、管理平台", // 网站描述
 
-    // 恢复 head 配置来引入自定义 CSS
-    head: [
-        ['link', { rel: 'icon', href: '/favicon.ico' }]
-    ],
 
     themeConfig: {
         // https://vitepress.dev/reference/default-theme-config
@@ -40,17 +49,38 @@ export default defineConfig({
                         { text: '项目介绍', link: '/guide/introduction' },
                         { text: '快速上手', link: '/guide/getting-started' },
                         { text: '目标用户', link: '/guide/who-is-it-for' },
-                        { text: '企业服务', link: '/features/ltd' },
+                        { text: '企业服务', link: '/guide/ltd' },
                     ]
                 },
                 {
                     text: '操作指南',
-                    collapsed: true,
+                    collapsed: false,
                     items: [
-                        { text: '申请证书', link: '/guide/apply-certificate' },
-                        { text: '授权API管理', link: '/guide/api-key-management' },
-                        { text: '监控', link: '/guide/monitoring' },
-
+                        { 
+                            text: '授权API管理', 
+                            link: '/guide/help/provider/index' ,
+                            items: [
+                                { text: 'SSH', link: '/guide/help/provider/ssh' },
+                                { text: '宝塔面板', link: '/guide/help/provider/btpanel' },
+                                { text: '1Panel', link: '/guide/help/provider/1panel' },
+                                { text: '宝塔WAF', link: '/guide/help/provider/btwaf' },
+                                { text: '雷池WAF', link: '/guide/help/provider/safeline' },
+                            ]
+                        },
+                        { text: '工作流-证书申请', link: '/guide/help/certificate/index' },                      
+                        { 
+                            text: '工作流-部署平台', 
+                            link: '/guide/help/deploy/index' ,
+                            items: [
+                                { text: '本地部署', link: '/guide/help/deploy/local' },
+                                { text: 'SSH', link: '/guide/help/deploy/ssh' },
+                                { text: '宝塔面板', link: '/guide/help/deploy/btpanel' },
+                                { text: '1Panel', link: '/guide/help/deploy/1panel' },
+                                { text: '宝塔WAF', link: '/guide/help/deploy/btwaf' },
+                                { text: '雷池WAF', link: '/guide/help/deploy/safeline' },
+                            ]
+                        },
+                        { text: '插件开发', link: '/guide/help/plugin/plugin' },
                     ]
                 }
             ],
@@ -65,7 +95,6 @@ export default defineConfig({
                         { text: '授权API管理', link: '/features/api-key-management' },
                         { text: '监控', link: '/features/monitoring' },
                         { text: '设置', link: '/features/settings' },
-                        { text: '企业服务', link: '/features/ltd' },
                     ]
                 }
             ],

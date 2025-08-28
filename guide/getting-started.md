@@ -17,9 +17,14 @@
 ```bash
 curl -sSO http://download.allinssl.com/install_allinssl.sh && bash install_allinssl.sh allinssl
 ```
+### 备用安装命令
+
+```bash
+curl -sSO https://cnb.cool/allinssl/install.sh/-/git/raw/main/install_allinssl.sh && bash install_allinssl.sh allinssl
+```
 
 ### 其他安装方式
-*   **源码编译:** [https://github.com/allinssl/allinssl/blob/1.0.1/README.md]
+*   **源码编译:** 请参考[README.md](https://github.com/allinssl/allinssl)
 *   **Docker:** 复制以下命令直接安装，用户名：`allinssl`    密码：`allinssldocker`    安全入口：`allinssl`
 ```bash
 docker run -itd \
