@@ -16,4 +16,7 @@ node_modules
 pnpm-global
 TODOs.md
 *.timestamp-*.mjs
+# SpecStory explanation file
 package-lock.json
+.specstory
+.cursorindexingignore
