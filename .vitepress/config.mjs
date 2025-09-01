@@ -35,7 +35,8 @@ export default defineConfig({
                 items: [
                     { text: 'GitHub', link: 'https://github.com/allinssl/allinssl' },
                     { text: '宝塔面板', link: 'https://www.bt.cn/' },
-                    { text: 'QQ交流群', link: 'https://qm.qq.com/q/Y7Mwiwba80' },
+                    { text: 'AllinSSL QQ交流群', link: 'https://qm.qq.com/q/Y7Mwiwba80' },
+                    { text: '域名注册 QQ交流群', link: 'https://qm.qq.com/q/wBWBFvUsqQ' },
                 ]
             }
         ],
