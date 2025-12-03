@@ -4,7 +4,7 @@ layout: home
 
 hero:
   name: "All in SSL"
-  text: "开源免费的 SSL 证书自动化管理平台"
+  text: "开源免费的 SSL 证书全自动化管理平台"
   tagline: 一键自动化申请、续期、部署、监控所有 SSL/TLS 证书，支持跨云环境和多 CA (coding~)，告别繁琐配置和高昂费用。
   image:
     src: /images/main.png
