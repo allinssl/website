@@ -60,7 +60,7 @@
 import { ref, computed } from 'vue';
 import { useClipboard } from '../composables/useClipboard.js';
 
-const command1Text = 'curl -sSO http://download.allinssl.com/install_allinssl.sh && bash install_allinssl.sh allinssl';
+const command1Text = 'curl -sSO http://allinssl.bt.cn/install_allinssl.sh && bash install_allinssl.sh allinssl';
 const command2aText = 'bash <(wget -qO- https://get.docker.com)';
 const command2bText = 'docker run -itd --name allinssl -p 7979:8888 -v /www/allinssl/data:/www/allinssl/data -e ALLINSSL_USER=allinssl -e ALLINSSL_PWD=allinssldocker -e ALLINSSL_URL=allinssl allinssl/allinssl:latest';
 

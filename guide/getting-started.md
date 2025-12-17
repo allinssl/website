@@ -15,12 +15,12 @@
 ### 使用二进制安装命令 (推荐)
 
 ```bash
-curl -sSO http://download.allinssl.com/install_allinssl.sh && bash install_allinssl.sh allinssl
+curl -sSO http://allinssl.bt.cn/install_allinssl.sh && bash install_allinssl.sh allinssl
 ```
 ### 备用安装命令
 
 ```bash
-curl -sSO https://cnb.cool/allinssl/install.sh/-/git/raw/main/install_allinssl.sh && bash install_allinssl.sh allinssl
+curl -sSO http://download.allinssl.com/install_allinssl.sh && bash install_allinssl.sh allinssl
 ```
 
 ### 其他安装方式
